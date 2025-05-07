@@ -1,0 +1,215 @@
+//HTML CODE//
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy-Generating Roadways</title>
+  <link rel="stylesheet" href="project.css" />
+  <script defer src="project.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <h1 class="logo">EcoRoad</h1>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Powering the Future with Every Step</h2>
+    <p>Energy-generating roadways convert pressure into clean power.</p>
+  </section>
+
+  <section id="features" class="section features">
+    <h2>Features</h2>
+    <div class="cards">
+      <div class="card">Durable Surface</div>
+      <div class="card">Pressure Conversion</div>
+      <div class="card">Smart Monitoring</div>
+    </div>
+  </section>
+
+  <section id="technology" class="section technology">
+    <h2>How It Works</h2>
+    <ol class="steps">
+      <li>Vehicle pressure is applied on road.</li>
+      <li>Embedded modules convert it to electrical energy.</li>
+      <li>Energy is stored or transferred to the grid.</li>
+    </ol>
+  </section>
+
+  <section id="impact" class="section impact">
+    <h2>Our Impact</h2>
+    <div class="counters">
+      <div class="counter">
+        <span class="count" data-target="5000">0</span>
+        <p>kWh Generated</p>
+      </div>
+      <div class="counter">
+        <span class="count" data-target="120">0</span>
+        <p>Roads Equipped</p>
+      </div>
+      <div class="counter">
+        <span class="count" data-target="75">0</span>
+        <p>CO₂ Tons Reduced</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 EcoRoad. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+//CSS CODE//
+
+
+
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background: #f4f4f9;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background: #222;
+    padding: 1rem 2rem;
+    color: #fff;
+  }
+  
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar a:hover {
+    color: #4ade80;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #4ade80, #22c55e);
+    color: white;
+    text-align: center;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .features .cards,
+  .impact .counters {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 200px;
+  }
+  
+  /* Technology Steps */
+  .steps {
+    list-style-position: inside;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  /* Impact Counters */
+  .counter {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    flex: 1 1 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counter span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #16a34a;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 1rem;
+  }
+
+
+
+
+//JAVA SCRIPT CODE//
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.count');
+  
+    counters.forEach(counter => {
+      counter.innerText = '0';
+  
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100;
+  
+        if (current < target) {
+          counter.innerText = `${Math.ceil(current + increment)}`;
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+  
+      updateCounter();
+    });
+  });
+  
+
