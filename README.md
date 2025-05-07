@@ -33,7 +33,10 @@ UI/UX Design (User experience and interaction):
 
 # How It Works 
 When vehicles pass over piezoelectric tiles, the pressure generates electric current.
+
 Solar panels on roads absorb sunlight and turn it into usable power.
+
 The collected energy is stored in batteries or sent to the power grid.
+
 This energy can power streetlights, traffic signals, or even nearby buildings.
 
